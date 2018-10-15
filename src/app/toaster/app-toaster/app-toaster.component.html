@@ -1,0 +1,13 @@
+<div class="toaster-container {{toastOptions.position}}">
+
+
+  <div class="toaster {{toast?.mode}}" [class.shakeMe]="toast.shake" [style.opacity]="toast.opacity" *ngFor="let toast of toasts;let ind=index;">
+    <div class="bar" [style.transitionDuration.s]="toast.time/1000" [style.width.%]="toast.barWidth"></div>
+    <div class="toaster-head" *ngIf="toast?.title">{{toast?.title}}</div>
+    <span (click)="closeMe(toast)" class="toaster-close">x</span>
+    <div class="toaster-body " [innerHTML]="toast?.message"></div>
+    <div class="toaster-foot" *ngIf="false">
+      <button (click)="onClk()" class="btn btn-primary">Sample Btn</button>
+    </div>
+  </div>
+</div>

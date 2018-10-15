@@ -1,0 +1,148 @@
+.toaster-container, .toaster-container * {
+    box-sizing: border-box;
+}
+.toaster-container {
+    display: block;
+    position: fixed;
+    width: 250px;
+    letter-spacing: normal;
+    z-index: 9000!important;
+}
+.toaster-container.bottom{
+    bottom: 10px;
+}
+.toaster-container.top{
+    top: 10px;
+}
+.toaster-container.right{
+    right: 10px;
+}
+
+.toaster-container.left {
+    left:10px;
+}
+
+
+.toaster {
+    width:100%;
+    background-color: #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 11px;
+    user-select: none;
+    position: relative;
+    transition: opacity 0.5s ease;
+}
+.toaster-head {
+    font-weight: 600;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline-block;
+    width: calc(100% - 15px);
+}
+
+.toaster-img:after {
+    content: '';
+    width: 48px;
+    height: 48px;
+}
+.toaster-content {
+    display: table;
+}
+.toster-text {
+    display: table-cell;
+
+}
+.toaster-body {
+    margin: 5px 0px;
+}
+.toaster-close {
+    width:7px;
+    height:12px;
+    user-select: none;
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-family: arial;
+}
+.toaster-close:hover {
+    color: #000;
+}
+.toaster.success {
+    background-color: #bbf7a2;
+    color: #055807;
+}
+.toaster.error {
+    background-color: #f1bcbc;
+    color: #a10404;
+}
+.toaster.info {
+    background-color: #ade4f5;
+    color: #0f27aa;
+}
+.toaster.warn {
+    background-color: #f8ceac;
+    color: #b95a00;
+}
+.btn {
+    border: none;
+    padding: 5px 10px;
+}
+
+.btn-primary {
+    background-color: dodgerblue;
+    color: #fff;
+}
+
+.bar{
+    height: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    border-radius: 2px;
+    transition: width 1s ease;
+    transition-duration: 5s;
+}
+.toaster.success .bar {
+    background-color: #055807;
+}
+.toaster.error .bar {
+    background-color: #a10404;
+}
+.toaster.info  .bar { 
+    background-color: #0f27aa;
+}
+.toaster.warn  .bar {
+    background-color: #b95a00;
+}
+
+
+.shakeMe {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both infinite; 
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  @keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
